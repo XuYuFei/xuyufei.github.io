@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Load more</title>
+</head>
+
+<body>
+  <ul id="list">
+  </ul>
+  <script type="text/javascript" src="./jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let html = ``;
+      for (let i = 0; i < 30; i++) {
+        html += `<li>${i}</li>`;
+      }
+      $("#list").html(html);
+    });
+    window.addEventListener('scroll', () => {
+      let clientHeight = document.documentElement.clientHeight || window.innerHeight; // 可视区域高度
+      let scrollHeight = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop; // 滚动高度
+      let offsetHeight = document.body.offsetHeight || document.documentElement.offsetHeight; // 文档高度
+
+      console.log(clientHeight, scrollHeight, offsetHeight);
+      let sw = true;
+      if ((clientHeight + scrollHeight) >= (offsetHeight - 100)) {
+        if (sw) {
+          sw = false;
+          let length = $("#list li").length;
+          let html = '';
+          for (let i = length; i < length + 10; i++) {
+            html += `<li>${i}</li>`;
+          }
+          $("#list").append(html);
+
+          sw = true;
+        }
+      }
+    })
+
+  </script>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      float: left;
+      display: inline;
+      width: 100%;
+      height: 40px;
+    }
+
+    ul li:nth-of-type(odd) {
+      background: darkgray;
+    }
+
+    ul li:nth-of-type(even) {
+      background: darkcyan;
+    }
+  </style>
+</body>
+
+</html>
