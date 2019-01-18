@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+html, body {
+  background: linear-gradient(#f16bba, #ec807f);
+  height: 100%;
+  overflow-y: hidden;
+}
+
+/*信息提示框*/
+
+/*信息框*/
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+}
+
+.alert-info {
+  width: 40%;
+  padding: 4rem;
+  height: 32rem;
+  text-align: center;
+  -webkit-border-radius: 4rem;
+  -moz-border-radius: 4rem;
+  border-radius: 4rem;
+  background-color: #fff;
+}
+
+.alert-info-img {
+  width: 17.3rem;
+}
+
+.alert-info-bottom {
+  margin: 4rem auto;
+  font-size: 3rem;
+
+}
+
+/*资源加载弹框*/
+.resource-progress {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #fff;
+}
+
+.resource-progress .progressBar-describe {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.resource-progress .progressBar-bg {
+  font-size: 4rem;
+  color: #000;
+  border: .3rem solid gray;
+  border-radius: 2rem;
+}
+
+.resource-progress .progressBar-txt {
+  width: 0%;
+  border-radius: 2rem;
+  display: inline-block;
+  text-align: right;
+  background-color: #fff;
+}
+
+.click-begin {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28.6rem;
+  height: 10.6rem;
+  background: url("../img/game/click-start.png") center center no-repeat;
+  background-size: contain;
+}
+
+.icon-music {
+  position: absolute;
+  width: 12.8rem;
+  height: 12.8rem;
+  right: 5%;
+  top: 15%;
+  background: url("../img/icon-music.png") center center no-repeat;
+  -webkit-background-size: 10rem;
+  background-size: 7rem;
+  border: .1rem solid white;
+  border-radius: 50%;
+}
+
+.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  border-bottom: .4rem solid deeppink;
+  transform-origin: bottom center;
+  transform: rotateZ(45deg) scale(1);
+}
+
+.startup,
+.success-grade {
+  position: relative;
+  z-index: 100;
+  height: 100%;
+  /*background: url('../img/bg.png') no-repeat top center;*/
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.common-bg-pos {
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 14.39%;
+}
+
+.level-bg {
+  width: 50.2rem;
+  height: 36.9rem;
+  background: url("../img/level-bg.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.level-grade {
+  position: absolute;
+  width: 7.3rem;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+
+/*通关*/
+.success-grade {
+  height: 100%;
+  display: none;
+  text-align: center;
+}
+
+.success-grade .success {
+  width: 67.6rem;
+  height: 63.6rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url('../img/passGame.png') no-repeat top center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.getAward {
+  margin-top: 4rem;
+  display: none;
+}
+
+.getAward-btn {
+  display: inline-block;
+  width: 28.6rem;
+  height: 10.6rem;
+  margin: 9.52rem 2rem;
+
+}
+
+#getAward-Ok {
+  background: url("../img/share/getAwards.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+#getAward-close {
+  background: url("../img/share/close-btn.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+#grade-txt {
+  font-size: 5.8rem;
+  color: #d64149;
+  position: absolute;
+  left: 46.4rem;
+  top: 27.4rem;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+/*主体*/
+.main {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  background: url("../img/game/bg.jpg") no-repeat top center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.container .level-hearts {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+
+.level-hearts img {
+  width: 10rem;
+  float: left;
+}
+
+.container .count-down {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+#timeBox {
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  line-height: 20rem;
+  font-size: 8rem;
+  text-align: center;
+  color: #fff;
+  background: url("../img/game/timebox_bg.png") no-repeat center;
+  background-size: contain;
+}
+
+.startup, .main {
+  display: none;
+}
+
+/*游戏结束*/
+.gameClose {
+  display: none;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  /*background: url("../img/share/gameClose.png") no-repeat top center;
+  -webkit-background-size: cover;
+  background-size: cover;*/
+}
+
+.gameOver-bg {
+  width: 50.2rem;
+  height: 35.8rem;
+  background: url("../img/gameOver-bg.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.share-desc-txt {
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.share-desc-txt img {
+  width: 53.3rem;
+}
+
+.share-btn {
+  text-align: center;
+  position: relative;
+  top: 53%;
+}
+
+.share-btn img {
+  width: 28.6rem;
+  margin: 0 2.4rem;
+}
+
+.share-details {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+.share-details .share-details-banner {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+}
+
+.share-details-txt {
+  font-size: 5rem;
+  color: #fff;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Roboto', 'Segoe UI', 'Arial', 'sans-serif';
+}
+
+.share-item {
+  display: inline-block;
+  width: 7rem;
+  height: 7rem;
+  margin: 0 1.8rem;
+}
+
+.share-item.share-details-wx {
+  background: url("../img/share/shareTo/wx.png") no-repeat;
+  -webkit-background-size: 7rem;
+  background-size: 7rem;
+}
+
+.share-item.share-details-pyq {
+  background: url("../img/share/shareTo/pyq.png") no-repeat;
+  -webkit-background-size: 7rem;
+  background-size: 7rem;
+}
+
+/*背景*/
+.footer {
+  position: absolute;
+  bottom: 1.6rem;
+  width: 100%;
+}
+
+.startup-logo {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.startup-logo,
+.startup-logo img {
+  width: 29.2rem;
+}

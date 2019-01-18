@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>口红机</title>
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/style.css?v=e9fc843b75"/>
+    <script src="js/shipei.js?v=9ab2c25e23"></script>
+    <script src="js/resLoader.js?v=dec92b2d1d"></script>
+</head>
+<body>
+<!--音乐相关-->
+<audio id="back_music" src="audio/background_audio.mp3"loop="true"></audio>
+<audio id="collision_audio" src="audio/collision_audio.wav"></audio>
+<audio id="Countdown_10s_audio" src="audio/Countdown_10s_audio.mp3"></audio>
+<audio id="gameSuccess_audio" src="audio/gameSuccess_audio.mp3"></audio>
+<audio id="insert_audio" src="audio/insert_audio.mp3"></audio>
+<audio id="success_audio" src="audio/success_audio.mp3"></audio>
+<!--警告弹窗-->
+<!--<div class="alert" style="display: none;">
+    <div class="alert-info">
+        <div class="alert-info-top">
+            <img class="alert-info-img" src="./img/delivery/error.png" alt="">
+        </div>
+        <div class="alert-info-bottom">
+            <span class="alert-info-txt">您的网络不稳定,请稍后再试..</span>
+        </div>
+    </div>
+</div>-->
+<!--资源加载动画-->
+<div class="resource-progress">
+    <div class="progressBar-describe">正在加载</div>
+    <div class="progressBar-bg">
+        <span class="progressBar-txt">0%</span>
+    </div>
+</div>
+<!--启动-->
+<div class="startup">
+    <div class="common-bg-pos level-bg">
+        <img class='level-grade' src="./img/level-1.png" alt="">
+    </div>
+    <div class="click-begin"></div>
+    <div class="icon-music active"></div>
+</div>
+<!--主体-->
+<div class="main">
+    <div class="container">
+        <div class="level-hearts">
+            <img src="img/game/level_icon_1_active.png" alt="1">
+            <img src="img/game/level_icon_2_active.png" alt="2">
+            <img src="img/game/level_icon_3_active.png" alt="3">
+        </div>
+        <canvas id="canvas">当前浏览器不支持canvas模式，请更换浏览器~~</canvas>
+        <div class="count-down">
+            <span id="timeBox">30</span>
+        </div>
+        <div class="icon-music active"></div>
+    </div>
+</div>
+<!--通关成功-->
+<div class="success-grade">
+    <div class="success">
+        <span id="grade-txt">1</span>
+    </div>
+    <div class="getAward">
+        <div class="getAward-btn" id="getAward-Ok"></div>
+        <div class="getAward-btn" id="getAward-close"></div>
+    </div>
+</div>
+<div class="gameClose">
+    <div class="common-bg-pos gameOver-bg"></div>
+    <div class="share-desc-txt"><img src="./img/share/shareTxt.png" alt=""></div>
+    <div class="share-btn">
+        <img id="share-btn-ok" src="./img/share/share-btn.png" alt="">
+        <img id="share-btn-close" src="./img/share/close-btn.png" alt="">
+    </div>
+    <div class="share-details">
+        <div class="share-details-banner">
+            <div class="share-details-txt">请点击右上角按钮进行分享...</div>
+            <!-- <div class="share-item share-details-wx" data-type="wx"></div>
+             <div class="share-item share-details-pyq" data-type="pyq"></div>-->
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="startup-logo">
+        <img src="./img/startup-logo.png" alt="">
+    </div>
+    <!--<div class="under-line"></div>-->
+</div>
+</body>
+</html>
+<script src="libs/jquery.min.js?v=a09e13ee94"></script>
+<script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/main.js?v=5ed7a95f34"></script>
+<script src="js/index.js?v=4b1725918c"></script>
