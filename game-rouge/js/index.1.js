@@ -57,9 +57,7 @@
               '/share/share-btn.png',
           ],
       }, //资源路径数组
-      onStart: function(){
-        obj.startUp();
-      }, //加载开始回调函数，传入参数total
+      onStart: null, //加载开始回调函数，传入参数total
       onProgress: function (t, e) {
           $(".progressBar-txt").html(Math.ceil(t / e * 100) + "%");
           console.log(t + "/" + e), console.log(t / e * 100 + "%");
@@ -83,7 +81,7 @@
   }).start();
 
   $.ajax({
-      url: location.origin,
+      url: location.origin + '/kh/wx/WeChatSignServlet',
       // url: location.origin + '/khwx/servlet/WeChatSignServlet',
       dataType: 'json',
       data: {
