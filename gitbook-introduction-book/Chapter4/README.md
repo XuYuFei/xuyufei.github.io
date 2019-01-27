@@ -1,3 +1,0 @@
-# 四、用Git做版本管理
-
-在远端建好git仓库，在 mybook 目录下执行 `git init` 初始化仓库，执行 `git remote add` 添加远程仓库。接着就可以愉快地 commit，push，pull … 
